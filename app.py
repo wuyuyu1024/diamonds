@@ -15,7 +15,9 @@ def get_data():
 def vis():
     data = pd.read_csv('data/diamonds.csv', index_col=0)
     letters = ['D', 'E', 'F', 'G', 'H', 'I', 'J']
-    return render_template('index.html', data=data, letters=letters)
+    clarity_list = ['IF', 'VVS1', 'VVS2', 'VS1', 'VS2', 'SI1', 'SI2', 'I1']
+    cut_list = ['Ideal', 'Premium', 'Very Good', 'Good', 'Fair']
+    return render_template('index.html', data=data, letters=letters, clarity_list=clarity_list, cut_list=cut_list)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)
